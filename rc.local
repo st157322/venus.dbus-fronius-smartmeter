@@ -1,0 +1,7 @@
+#!/bin/bash
+
+rm /service/dbus-fronius-smartmeter
+
+sleep 20 && ln -s /data/dbus-fronius-smartmeter/service /service/dbus-fronius-smartmeter
+
+sleep 20 && kill $(pgrep -f 'python /data/dbus-fronius-smartmeter/dbus-fronius-smartmeter.py')
