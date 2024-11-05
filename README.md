@@ -39,6 +39,12 @@ Otherwise specify the IP using --ip.
   
    `rc.local`
 
+   or just copy the rc.local from above to /data/rc.local
+
+   sometimes you have to set the permissions:
+
+   `chmod 755 /data/rc.local`
+
    The daemon-tools should automatically start this service within seconds.
 
 ### Debugging
