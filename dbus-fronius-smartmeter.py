@@ -127,6 +127,12 @@ class DbusFroniusService:
       '/Ac/L3/Power',
       '/Ac/Energy/Forward',
       '/Ac/Energy/Reverse',
+      '/Ac/L1/Energy/Forward',
+      '/Ac/L1/Energy/Reverse',
+      '/Ac/L2/Energy/Forward',
+      '/Ac/L2/Energy/Reverse',
+      '/Ac/L3/Energy/Forward',
+      '/Ac/L3/Energy/Reverse',
       '/Latency',
     ]
 
@@ -181,6 +187,12 @@ class DbusFroniusService:
     self._dbusservice['/Ac/L3/Power'] = meter_data['PowerReal_P_Phase_3']
     self._dbusservice['/Ac/Energy/Forward'] = float(meter_data['EnergyReal_WAC_Sum_Consumed']) / 1000.
     self._dbusservice['/Ac/Energy/Reverse'] = float(meter_data['EnergyReal_WAC_Sum_Produced']) / 1000.
+    self._dbusservice['/Ac/L1/Energy/Forward'] = float(meter_data['EnergyReal_WAC_Sum_Consumed']) / 3000.
+    self._dbusservice['/Ac/L1/Energy/Reverse'] = float(meter_data['EnergyReal_WAC_Sum_Produced']) / 3000.
+    self._dbusservice['/Ac/L2/Energy/Forward'] = float(meter_data['EnergyReal_WAC_Sum_Consumed']) / 3000.
+    self._dbusservice['/Ac/L2/Energy/Reverse'] = float(meter_data['EnergyReal_WAC_Sum_Produced']) / 3000.
+    self._dbusservice['/Ac/L3/Energy/Forward'] = float(meter_data['EnergyReal_WAC_Sum_Consumed']) / 3000.
+    self._dbusservice['/Ac/L3/Energy/Reverse'] = float(meter_data['EnergyReal_WAC_Sum_Produced']) / 3000.
     self._dbusservice['/Latency'] = self._latency
     log.info("Meter Power: %s, Latency: %.1fms" % (MeterConsumption, self._latency*1000))
     return meter_data
